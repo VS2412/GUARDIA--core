@@ -46,6 +46,23 @@ This project was developed as part of **Smart India Hackathon (SIH)**, aligned w
 - Based on GPS activity density, historical data, and reviews
 - Helps tourists make informed travel decisions
 
+### Authority Dashboard
+
+The Authority Dashboard is a dedicated web-based interface designed for government officials and authorized personnel to monitor, verify, and respond to tourist activity in real time.
+
+Built using **React (Vite)**, the dashboard connects securely to the central backend and serves as the operational control layer of the system.
+
+**Core Responsibilities:**
+- Secure login and role-based access for authorities
+- KYC verification and approval workflow
+- QR code scanning and instant tourist identity validation
+- Real-time visualization of tourist locations on an interactive map
+- Monitoring and handling of SOS alerts with priority routing
+- Incident management and response coordination
+- Tourist density overview to identify high-risk or overcrowded areas
+
+The dashboard enables authorities to respond quickly to emergencies, reduce manual verification overhead, and maintain situational awareness across regions. By centralizing tourist data, SOS alerts, and safety insights, it ensures faster decision-making and improved coordination during critical events.
+
 ### Low Connectivity Support
 - Hardware-assisted mesh / peer-to-peer network
 - Offline SOS triggering and relay
@@ -135,6 +152,9 @@ This project is organized as a multi-repo system:
 
 - **Backend & API Repository:**  
   [https://github.com/777mudit/SafeLink-backend]
+
+- **Authority Dashboard Repository:**  
+  [https://github.com/VS2412/Auth-Dash]
 
 - **AI / Safety Scoring Module Repository:**  
   [https://github.com/VS2412/Enpitsu]
