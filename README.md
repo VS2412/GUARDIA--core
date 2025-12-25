@@ -70,77 +70,76 @@ The dashboard enables authorities to respond quickly to emergencies, reduce manu
 - Designed for remote, low-signal regions
 
 ---
+### System Architecture
 
-## System Architecture >
-
+```text
 +----------------------------+
-| Tourist App |
-| (React Native – iOS/Android)|
-| |
-| - Login / Signup |
-| - KYC Verification |
-| - QR Code Identity |
-| - Trip Planning |
-| - SOS Button |
-| - Maps & Safety Alerts |
-| - Multilingual UI |
+|        Tourist App         |
+| (React Native–iOS/Android) |
+|                            |
+| - Login / Signup           |
+| - KYC Verification         |
+| - QR Code Identity         |
+| - Trip Planning            |
+| - SOS Button               |
+| - Maps & Safety Alerts     |
+| - Multilingual UI          |
 +-------------+--------------+
-|
-| HTTPS / REST APIs
-v
+              |
+      HTTPS / REST APIs
+              v
 +----------------------------+
-| Backend Server |
-| (Node.js) |
-| |
-| - Auth & KYC Validation |
-| - QR Code Generation |
-| - Trip & Destination Data |
-| - Emergency Routing |
-| - Safety Score Engine |
-| |
-| Data Sources: |
-| - destinations.csv |
-| - reviews.csv |
+|       Backend Server       |
+|          (Node.js)         |
+|                            |
+| - Auth & KYC Validation    |
+| - QR Code Generation       |
+| - Trip & Destination Data  |
+| - Emergency Routing        |
+| - Safety Score Engine      |
+|                            |
+| Data Sources:              |
+| - destinations.csv         |
+| - reviews.csv              |
 +------+------+--------------+
-| |
-| v
-| +------------------------+
-| | AI / Safety Engine |
-| | |
-| | - GPS-based Analysis |
-| | - Incident Density |
-| | - Risk Scoring Model |
-| +------------------------+
-|
-v
+       |      |
+       |      v
+       |  +------------------------+
+       |  |   AI / Safety Engine   |
+       |  |                        |
+       |  | - GPS-based Analysis   |
+       |  | - Incident Density     |
+       |  | - Risk Scoring Model   |
+       |  +------------------------+
+       v
 +----------------------------+
-| Authority Dashboard |
-| |
-| - QR Scan & Verification |
-| - SOS Monitoring |
-| - Tourist Density View |
-| - Incident Management |
+|     Authority Dashboard    |
+|                            |
+| - QR Scan & Verification   |
+| - SOS Monitoring           |
+| - Tourist Density View     |
+| - Incident Management      |
 +-------------+--------------+
-|
-v
+              |
+              v
 +----------------------------+
-| Emergency Response |
-| (Police / Medical / Admin) |
+|     Emergency Response     |
+|  (Police / Medical / Admin)|
 +----------------------------+
 
 +--------------------------------------------------------+
-| Low Connectivity / Mesh Network |
-| |
-| Tourist Devices (Peer-to-Peer / LoRa / Mesh) |
-| |
-| - Offline SOS Trigger |
-| - Cached Itinerary Access |
-| - Offline Maps |
-| |
-| SOS hops across nearby devices until connectivity |
-| is restored or authority node is reached |
+|           Low Connectivity / Mesh Network              |
+|                                                        |
+|     Tourist Devices (Peer-to-Peer / LoRa / Mesh)       |
+|                                                        |
+| - Offline SOS Trigger                                  |
+| - Cached Itinerary Access                              |
+| - Offline Maps                                         |
+|                                                        |
+| SOS hops across nearby devices until connectivity      |
+| is restored or authority node is reached               |
 +--------------------------------------------------------+
-
+```
 ---
 
 ## Repository Structure
