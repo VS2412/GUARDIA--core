@@ -13,7 +13,6 @@ Tourism in the North-East offers immense natural and cultural value, but tourist
 - Poor network connectivity in remote and hilly areas
 
 **GUARDIA** addresses these challenges through an integrated system that combines a mobile application, an authority monitoring backend, AI-driven safety scoring, and an offline-capable mesh network.  
-Assam is used as the pilot region for demonstration and implementation.
 
 This project was developed as part of **Smart India Hackathon (SIH)**, aligned with problem statements from the **Ministry of Development of North Eastern Region (DoNER)**.
 
@@ -58,76 +57,72 @@ This project was developed as part of **Smart India Hackathon (SIH)**, aligned w
 ## System Architecture >
 
 +----------------------------+
-|        Tourist App         |
-|   (React Native – iOS/Android)
-|                            |
-|  - Login / Signup          |
-|  - KYC Verification        |
-|  - QR Code Identity        |
-|  - Trip Planning           |
-|  - SOS Button              |
-|  - Maps & Safety Alerts    |
-|  - Multilingual UI         |
+| Tourist App |
+| (React Native – iOS/Android)|
+| |
+| - Login / Signup |
+| - KYC Verification |
+| - QR Code Identity |
+| - Trip Planning |
+| - SOS Button |
+| - Maps & Safety Alerts |
+| - Multilingual UI |
 +-------------+--------------+
-              |
-              | HTTPS / REST APIs
-              v
+|
+| HTTPS / REST APIs
+v
 +----------------------------+
-|        Backend Server      |
-|        (Node.js)           |
-|                            |
-|  - Auth & KYC Validation   |
-|  - QR Code Generation      |
-|  - Trip & Destination Data |
-|  - Emergency Routing       |
-|  - Safety Score Engine     |
-|                            |
-|  Data Sources:             |
-|  - destinations.csv       |
-|  - reviews.csv            |
+| Backend Server |
+| (Node.js) |
+| |
+| - Auth & KYC Validation |
+| - QR Code Generation |
+| - Trip & Destination Data |
+| - Emergency Routing |
+| - Safety Score Engine |
+| |
+| Data Sources: |
+| - destinations.csv |
+| - reviews.csv |
 +------+------+--------------+
-       |      |
-       |      |
-       |      v
-       |  +------------------------+
-       |  |   AI / Safety Engine   |
-       |  |                        |
-       |  | - GPS-based Analysis   |
-       |  | - Incident Density     |
-       |  | - Risk Scoring Model   |
-       |  +------------------------+
-       |
-       v
+| |
+| v
+| +------------------------+
+| | AI / Safety Engine |
+| | |
+| | - GPS-based Analysis |
+| | - Incident Density |
+| | - Risk Scoring Model |
+| +------------------------+
+|
+v
 +----------------------------+
-|     Authority Dashboard    |
-|                            |
-|  - QR Scan & Verification  |
-|  - SOS Monitoring          |
-|  - Tourist Density View    |
-|  - Incident Management     |
+| Authority Dashboard |
+| |
+| - QR Scan & Verification |
+| - SOS Monitoring |
+| - Tourist Density View |
+| - Incident Management |
 +-------------+--------------+
-              |
-              |
-              v
+|
+v
 +----------------------------+
-|    Emergency Response      |
-|  (Police / Medical / Admin)|
+| Emergency Response |
+| (Police / Medical / Admin) |
 +----------------------------+
-
 
 +--------------------------------------------------------+
-|            Low Connectivity / Mesh Network              |
-|                                                        |
-|  Tourist Devices (Peer-to-Peer / LoRa / Mesh)          |
-|                                                        |
-|  - Offline SOS Trigger                                 |
-|  - Cached Itinerary Access                             |
-|  - Offline Maps                                       |
-|                                                        |
-|  SOS hops across nearby devices until connectivity     |
-|  is restored or authority node is reached              |
+| Low Connectivity / Mesh Network |
+| |
+| Tourist Devices (Peer-to-Peer / LoRa / Mesh) |
+| |
+| - Offline SOS Trigger |
+| - Cached Itinerary Access |
+| - Offline Maps |
+| |
+| SOS hops across nearby devices until connectivity |
+| is restored or authority node is reached |
 +--------------------------------------------------------+
-
 
 ---
 
