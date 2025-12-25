@@ -119,6 +119,9 @@ This project is organized as a multi-repo system:
 - **AI / Safety Scoring Module Repository:**  
   [https://github.com/VS2412/Enpitsu]
 
+- **Hardware & Mesh Connectivity:**  
+  [https://github.com/VS2412/Hackaccino_Proj]
+  
 ---
 
 ## Scope & Notes
