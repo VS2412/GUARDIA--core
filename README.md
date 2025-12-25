@@ -71,75 +71,25 @@ The dashboard enables authorities to respond quickly to emergencies, reduce manu
 
 ---
 ### System Architecture
+graph TD
+    subgraph Client_Side
+    A[Tourist App <br/> React Native] -->|HTTPS/REST| B[Backend Server <br/> Node.js]
+    end
 
-```text
-+----------------------------+
-|        Tourist App         |
-| (React Native–iOS/Android) |
-|                            |
-| - Login / Signup           |
-| - KYC Verification         |
-| - QR Code Identity         |
-| - Trip Planning            |
-| - SOS Button               |
-| - Maps & Safety Alerts     |
-| - Multilingual UI          |
-+-------------+--------------+
-              |
-      HTTPS / REST APIs
-              v
-+----------------------------+
-|       Backend Server       |
-|          (Node.js)         |
-|                            |
-| - Auth & KYC Validation    |
-| - QR Code Generation       |
-| - Trip & Destination Data  |
-| - Emergency Routing        |
-| - Safety Score Engine      |
-|                            |
-| Data Sources:              |
-| - destinations.csv         |
-| - reviews.csv              |
-+------+------+--------------+
-       |      |
-       |      v
-       |  +------------------------+
-       |  |   AI / Safety Engine   |
-       |  |                        |
-       |  | - GPS-based Analysis   |
-       |  | - Incident Density     |
-       |  | - Risk Scoring Model   |
-       |  +------------------------+
-       v
-+----------------------------+
-|     Authority Dashboard    |
-|                            |
-| - QR Scan & Verification   |
-| - SOS Monitoring           |
-| - Tourist Density View     |
-| - Incident Management      |
-+-------------+--------------+
-              |
-              v
-+----------------------------+
-|     Emergency Response     |
-|  (Police / Medical / Admin)|
-+----------------------------+
+    subgraph Data_Processing
+    B --> D[(Data Sources <br/> CSV Files)]
+    B --> E[AI / Safety Engine]
+    E -->|Risk Scoring| B
+    end
 
-+--------------------------------------------------------+
-|           Low Connectivity / Mesh Network              |
-|                                                        |
-|     Tourist Devices (Peer-to-Peer / LoRa / Mesh)       |
-|                                                        |
-| - Offline SOS Trigger                                  |
-| - Cached Itinerary Access                              |
-| - Offline Maps                                         |
-|                                                        |
-| SOS hops across nearby devices until connectivity      |
-| is restored or authority node is reached               |
-+--------------------------------------------------------+
-```
+    subgraph Authorities
+    B --> F[Authority Dashboard]
+    F --> G[Emergency Response]
+    end
+
+    subgraph Offline_Mode
+    H[Mesh Network / LoRa] -.->|Offline SOS| F
+    end
 ---
 
 ## Repository Structure
