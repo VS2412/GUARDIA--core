@@ -104,7 +104,7 @@ graph TD
     class App,Backend,AuthDash,Mesh box;
     classDef alert fill:#ffcccc,stroke:#ff0000,stroke-width:2px;
     class Emergency alert;
-
+```
 ---
 
 ## Repository Structure
