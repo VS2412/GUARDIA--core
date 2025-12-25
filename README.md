@@ -71,25 +71,40 @@ The dashboard enables authorities to respond quickly to emergencies, reduce manu
 
 ---
 ### System Architecture
+
+```mermaid
 graph TD
-    subgraph Client_Side
-    A[Tourist App <br/> React Native] -->|HTTPS/REST| B[Backend Server <br/> Node.js]
-    end
+    %% 1. Tourist App Node
+    App["📱 <b>Tourist App</b> <br/>(React Native – iOS/Android)<hr/>- Login / Signup<br/>- KYC Verification<br/>- QR Code Identity<br/>- Trip Planning<br/>- SOS Button<br/>- Multilingual UI"]
+    
+    %% 2. Backend Node
+    Backend["⚙️ <b>Backend Server</b> <br/>(Node.js)<hr/>- Auth & KYC Validation<br/>- QR Code Generation<br/>- Trip & Destination Data<br/>- Emergency Routing<br/>- Safety Score Engine"]
+    
+    %% 3. Data & AI Nodes
+    Data[("🗄️ <b>Data Sources</b><br/><hr/>- destinations.csv<br/>- reviews.csv")]
+    AI["🧠 <b>AI / Safety Engine</b><br/><hr/>- GPS-based Analysis<br/>- Incident Density<br/>- Risk Scoring Model"]
 
-    subgraph Data_Processing
-    B --> D[(Data Sources <br/> CSV Files)]
-    B --> E[AI / Safety Engine]
-    E -->|Risk Scoring| B
-    end
+    %% 4. Authority & Emergency
+    AuthDash["🖥️ <b>Authority Dashboard</b><br/><hr/>- QR Scan & Verification<br/>- SOS Monitoring<br/>- Tourist Density View<br/>- Incident Management"]
+    Emergency["🚑 <b>Emergency Response</b><br/>(Police / Medical / Admin)"]
 
-    subgraph Authorities
-    B --> F[Authority Dashboard]
-    F --> G[Emergency Response]
-    end
+    %% 5. Mesh Network
+    Mesh["📡 <b>Low Connectivity / Mesh</b><br/>(Peer-to-Peer / LoRa)<hr/>- Offline SOS Trigger<br/>- Cached Itineraries<br/>- Offline Maps<br/><i>*Hops until connectivity found*</i>"]
 
-    subgraph Offline_Mode
-    H[Mesh Network / LoRa] -.->|Offline SOS| F
-    end
+    %% CONNECTIONS
+    App <==>|HTTPS / REST API| Backend
+    Backend <--> Data
+    Backend <--> AI
+    Backend --> AuthDash
+    AuthDash --> Emergency
+    Mesh -.->|Offline SOS Signal| AuthDash
+
+    %% STYLING (Optional: Makes it look nicer)
+    classDef box fill:#f9f9f9,stroke:#333,stroke-width:2px;
+    class App,Backend,AuthDash,Mesh box;
+    classDef alert fill:#ffcccc,stroke:#ff0000,stroke-width:2px;
+    class Emergency alert;
+
 ---
 
 ## Repository Structure
