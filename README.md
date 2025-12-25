@@ -100,7 +100,7 @@ graph TD
     Mesh -.->|Offline SOS Signal| AuthDash
 
     %% STYLING 
-    classDef alert fill:#ffcccc,stroke:#000000,stroke-width:2px;
+    classDef alert fill:#ffcccc,stroke:#000000,stroke-width:2px,color:#000000;
     class Emergency alert;
 ```
 ---
